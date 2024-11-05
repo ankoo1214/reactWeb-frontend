@@ -1,0 +1,25 @@
+.subHeading{
+    color: #9ca3af;
+}
+.progress-container {
+  width: 100%;
+  background-color: #bebebe;
+  height: 5px;
+  border-radius: 5px; 
+  margin-top: 5px;
+ 
+
+}
+
+.progress-bar {
+  height: 100%; 
+  background-color: #ffffff; 
+  border-radius: 5px; 
+  transition: width 0.1s linear; 
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none; 
+  margin: 0; 
+}

@@ -1,0 +1,16 @@
+.primary-text {
+  color: #152c5b;
+}
+.thirdBtn:hover{
+   background-color:  #6610f2;
+   color:#ffffff
+}
+
+.thirdBtn{
+    border-color: #6610f2;
+    color: #6610f2;
+}
+.image{
+   border-top-left-radius: 50px;
+   border-top-right-radius: 50px;
+}

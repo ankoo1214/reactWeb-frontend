@@ -1,0 +1,7 @@
+.blueColor{
+    background-color: #6610f2;
+}
+.bigText{
+    font-size:clamp(2rem, 5vw, 5rem);
+   
+}

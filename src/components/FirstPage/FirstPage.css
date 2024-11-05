@@ -1,0 +1,21 @@
+.btn1{
+    color:#ffffff;
+    background-color:#6610f2;
+    border-radius: 10px;
+    border-bottom: #6610f2;
+    border-width: 0;
+    width: 100%;
+    justify-content: start;
+    text-align: left;
+}
+.imgContainer{
+     box-shadow: 0 2px 15px  rgba(0, 0, 0, 0.1);
+
+
+     
+}
+@media screen and (max-width:718px){
+  .imgContainer{
+    margin: 50px 0px 0px 0px ;
+  }
+}
