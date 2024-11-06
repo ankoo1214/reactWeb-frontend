@@ -1,3 +1,15 @@
 .heading {
     font-size: clamp(2rem, 5vw, 5rem);
 }
+.headingDiscuss{
+     font-size: clamp(1.8rem, 4vw, 4rem);
+     text-align: center;
+}
+.portfolio-card {
+  transition: transform 1s ease-in-out, box-shadow 1s ease;
+}
+
+.portfolio-card:hover {
+  transform: translateY(-20px) !important;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2) !important;
+}

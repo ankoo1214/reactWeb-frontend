@@ -16,7 +16,12 @@
 .navbar-toggler {
   color: #000;
 }
-.navBtn {
+.navBtn:hover {
+  background-color: #6610f2;
+  color: #ffffff;
+  
+}
+.navBtn{
   background-color: #6610f2;
   color: #ffffff;
 }
@@ -100,3 +105,15 @@
     align-items: center;
   }
 } 
+.navbar-toggler:focus{
+  outline: none;
+  box-shadow: none;
+}
+.serviceCard {
+  transition: transform 0.1s ease-in-out, box-shadow 0.3s ease;
+}
+
+.serviceCard:hover {
+  transform: translateY(-20px) !important;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2) !important;
+}

@@ -1,4 +1,6 @@
-import './Team.css'
+import { useEffect } from "react";
+import "./Team.css";
+import Aos from "aos";
 const developers = [
   {
     name: "Alice Johnson",
@@ -28,9 +30,15 @@ const developers = [
   { name: "Eve Brown", role: "Project Manager", image: "images/woman2.jfif" },
 ];
 function Team() {
+  useEffect(()=>{
+    Aos.init({duration:1000})
+  },[])
   return (
-    <div className="container">
-      <div className="d-flex flex-wrap my-5 justify-content-center">
+    <div className="container" data-aos="fade-up">
+      <div
+        className="d-flex flex-wrap my-5 justify-content-center"
+        data-aos="fade-up"
+      >
         <div className="col-md-6 d-flex flex-column justify-content-center">
           <h1 className="primary-text heading ">Our Team</h1>
           <p className="subHeading fs-5">
@@ -42,10 +50,14 @@ function Team() {
           <img src="images/team.webp" className="img-fluid" />
         </div>
       </div>
-      <div className="d-flex gap-5 flex-wrap justify-content-center my-5">
+      <div
+        className="d-flex gap-5 flex-wrap justify-content-center my-5"
+        data-aos="fade-up"
+      >
         {developers.map((item) => (
           <div
             class="card d-flex justify-content-center align-items-center py-4 shadow-lg p-3 mb-5 bg-body-tertiary rounded-4 serviceCard border border-0"
+            data-aos="fade-up"
             style={{ width: "15rem" }}
           >
             <img src={item.image} class="card-img-top teamImage" alt="..." />

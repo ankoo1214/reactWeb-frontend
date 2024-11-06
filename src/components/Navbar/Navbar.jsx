@@ -1,17 +1,22 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FaBars } from "react-icons/fa";
 import "./Navbar.css";
 import { Link } from "react-router-dom";
+import { a } from "framer-motion/m";
 
 function Navbar() {
-  const [isCollapsed, setIsCollapsed] = useState(true);
-  const [activeBtn, setactiveBtn] = useState("Home")
-  const toggleCollapse = () => {
-    setIsCollapsed(!isCollapsed);
+  const [activeBtn, setactiveBtn] = useState("Home");
+
+  const handleBtn = (buttonName) => {
+    setactiveBtn(buttonName);
+    localStorage.setItem("activeBtn", buttonName);
   };
- const handleBtn =(buttonName)=>{
-  setactiveBtn(buttonName)
- }
+  useEffect(() => {
+    const savedActiveBtn = localStorage.getItem("activeBtn");
+    if (savedActiveBtn) {
+      setactiveBtn(savedActiveBtn);
+    }
+  }, []);
 
   return (
     <nav class="navbar navbar-expand-lg bg-body-tertiary navBar">
@@ -74,11 +79,12 @@ function Navbar() {
               </Link>
             </li>
           </ul>
-          <div class="d-flex discussBtn" role="search" >
+          <div class="d-flex discussBtn" role="search">
             <Link to={"/form"}>
               <button
                 class="btn navBtn fs-5 text-center fw-medium rounded-5 px-3"
                 type="submit"
+                onClick={() => handleBtn("")}
               >
                 Discuss Project
               </button>

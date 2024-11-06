@@ -4,10 +4,4 @@
 .primary-text {
   color: #152c5b;
 }
-.serviceCard:hover{
-   transform: scale(1.1);
-   transition: 0.5s;
-}
-.serviceCard{
-    transition: 0.5s;
-}
+

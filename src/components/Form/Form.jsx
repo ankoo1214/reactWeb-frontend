@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./Form.css";
+
 import axios from "axios";
 import { useEffect } from "react";
 import emailjs from "@emailjs/browser";
@@ -15,14 +16,33 @@ function Form() {
   let alertDuration = 3000;
 
   const serviceId = "service_5w05x1o";
-  const templateId = "template_7wje82q";
-  const userId = "oaFNs8A4it-iUS4fn";
+  const templateId = "template_jiyy1gb";
+  const userId = "Duq5WyuZ6hai2Sh4p";
 
   const validateEmail = (email) => {
     const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Simple regex for email validation
     return re.test(String(email).toLowerCase());
   };
+  const senEmail = () => {
+    const templateParams = {
+      user_name: name,
+      from_name:name,
+      user_contact: contact,
+      user_email: email,
+      message: message,
+    };
+    try {
+      emailjs
+        .send(serviceId, templateId, templateParams, userId)
+        .then((response) => {
+          console.log("Email sent succssfully", response.status, response.text);
+        });
+    } catch (error) {
+      console.log(error);
+    }
+  };
   const handleSubmit = () => {
+    senEmail()
     if (!name || !email || !message) {
       setalertMessage("Marked fields are required");
       setalertVisible(true);
@@ -36,19 +56,8 @@ function Form() {
       setalertVisible(true);
       return;
     }
-    const templateParams = {
-      from_name: name,
-      to_name: "Ankush Patale",
-      from_email: email,
-      contact: contact,
-      message: message,
-    };
+
     try {
-      emailjs
-        .send(serviceId, templateId, templateParams, userId)
-        .then((response) => {
-          console.log("Email sent succssfully", response.status, response.text);
-        });
       const formData = new FormData();
       formData.append("name", name);
       formData.append("email", email);
@@ -99,9 +108,11 @@ function Form() {
   }, [alertVisible]);
 
   return (
-    <div className="container my-5">
+    <div className="container my-5" data-aos="fade-up">
       <div className="header d-flex flex-column align-items-center justify-content-center">
-        <h1 className="primary-text fw-semibold heading">Let's Discuss</h1>
+        <h1 className="primary-text fw-semibold headingDiscuss">
+          Let's Discuss
+        </h1>
         <p className="fs-5 subHeading text-center">
           Please fill out the form below to discuss your project and we'll get
           back to you in less than 24 hours.

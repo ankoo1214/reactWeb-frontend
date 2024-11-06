@@ -1,5 +1,7 @@
+import { useEffect } from 'react';
 import './ThirdPage.css'
 import { Link } from 'react-router-dom';
+import Aos from 'aos';
 const projects = [
   { name: "Recruiting Apps", image: "images/recruit.png", type: "Mobile Apps" },
   { name: "Stream Plus", image: "images/stream.png", type: "Mobile Apps" },
@@ -12,9 +14,15 @@ const projects = [
   { name: "Courses Management", image: "images/course.png", type: "Website" },
 ];
 function ThirdPage() {
+  useEffect(()=>{
+    Aos.init()
+  },[])
   return (
-    <div className="container-fluid my-5">
-      <div className="header d-flex flex-column align-items-center justify-content-center">
+    <div className="container-fluid my-5" data-aos="fade-up">
+      <div
+        className="header d-flex flex-column align-items-center justify-content-center"
+        data-aos="fade-up"
+      >
         <h1 className="primary-text fw-semibold fs-1">
           Project we have done for Clients
         </h1>
@@ -22,9 +30,13 @@ function ThirdPage() {
           We are ready to to scale up your business with out great work.
         </p>
       </div>
-      <div className="d-flex flex-wrap justify-content-center">
+      <div
+        className="d-flex flex-wrap justify-content-center"
+        data-aos="fade-up"
+      >
         {projects.map((item, index) => (
           <div
+            data-aos="fade-up"
             className="card border border-0 serviceCard m-4 rounded-4 shadow mb-5 mt-4 rounded"
             style={{ width: "22rem" }}
             key={index}
@@ -45,8 +57,8 @@ function ThirdPage() {
           </div>
         ))}
       </div>
-      <div className="d-flex justify-content-center align-items-center">
-        <Link to ={'/portfolio'}>
+      <div className="d-flex justify-content-center align-items-center" data-aos = 'fade-up'>
+        <Link to={"/portfolio"}>
           <button className="btn thirdBtn primary-text rounded-5 px-4 py-2 fs-5 fw-medium">
             See More
           </button>
