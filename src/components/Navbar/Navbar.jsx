@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { FaBars } from "react-icons/fa";
 import "./Navbar.css";
 import { Link } from "react-router-dom";
-import { a } from "framer-motion/m";
 
 function Navbar() {
   const [activeBtn, setactiveBtn] = useState("Home");
