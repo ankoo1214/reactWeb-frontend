@@ -26,7 +26,7 @@ function Form() {
   const senEmail = () => {
     const templateParams = {
       user_name: name,
-      from_name:name,
+      from_name: name,
       user_contact: contact,
       user_email: email,
       message: message,
@@ -36,13 +36,21 @@ function Form() {
         .send(serviceId, templateId, templateParams, userId)
         .then((response) => {
           console.log("Email sent succssfully", response.status, response.text);
+          setname("");
+          setemail("");
+          setmessage("");
+          setcontact("");
+          setalertType("success");
+          setalertMessage("Message sent successfully");
+          setalertVisible(true);
+          console.log("Form is submitted successfully");
         });
     } catch (error) {
       console.log(error);
     }
   };
   const handleSubmit = () => {
-    senEmail()
+    senEmail();
     if (!name || !email || !message) {
       setalertMessage("Marked fields are required");
       setalertVisible(true);
@@ -72,6 +80,7 @@ function Form() {
         })
         .then((response) => {
           if (response.data.Status === "Form submitted Successfully") {
+            console.log("responeDat-->", response.data.Status);
             setname("");
             setemail("");
             setmessage("");
