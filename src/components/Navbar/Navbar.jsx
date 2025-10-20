@@ -22,7 +22,7 @@ function Navbar() {
       <div class="container-fluid px-2">
         <div className="title">
           <h2 class="fs-1 primary-text" href="#">
-            NaiveHub <span className="pulse">Solutions</span>
+            NaiveHub <span className="pulse"> Solutions</span>
           </h2>
           <p className="primary-text sub-title">
             Driving Innovation, Shaping the Future
