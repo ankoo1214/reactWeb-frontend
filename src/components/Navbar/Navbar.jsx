@@ -65,7 +65,7 @@ function Navbar() {
                 Projects
               </Link>
             </li>
-            <li class="nav-item">
+            {/* <li class="nav-item">
               <Link
                 to={"/team"}
                 className={`primary-text disabled fs-5 fw-medium text-decoration-none listItems  ${
@@ -76,7 +76,7 @@ function Navbar() {
               >
                 Team
               </Link>
-            </li>
+            </li> */}
           </ul>
           <div class="d-flex discussBtn" role="search">
             <Link to={"/form"}>
